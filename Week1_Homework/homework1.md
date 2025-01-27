@@ -129,14 +129,6 @@ Tip: For every day, we only care about one single trip with the longest distance
 - 2019-10-26
 - 2019-10-31
 
-- ANSWER -> The pick-up day with the longest trip distance is 2019-10-31 with a distance of 515.89 miles.
-
-## Question 5. Three biggest pickup zones
-
-Which were the top pickup locations with over 13,000 in
-`total_amount` (across all trips) for 2019-10-18?
-
-Consider only `lpep_pickup_datetime` when filtering by date.
 ```sql
 SELECT
     DATE(lpep_pickup_datetime) AS pickup_day,
@@ -149,7 +141,35 @@ ORDER BY
     trip_distance DESC
 LIMIT 1;
 ```
- 
+
+- ANSWER -> The pick-up day with the longest trip distance is 2019-10-31 with a distance of 515.89 miles.
+
+## Question 5. Three biggest pickup zones
+
+Which were the top pickup locations with over 13,000 in
+`total_amount` (across all trips) for 2019-10-18?
+
+Consider only `lpep_pickup_datetime` when filtering by date.
+ ```sql
+SELECT 
+    z.Zone AS pickup_zone_name,
+    SUM(t.total_amount) AS total_amount
+FROM 
+    trips t
+JOIN 
+    taxi_zone_lookup z
+ON 
+    t.PULocationID = z.LocationID
+WHERE 
+    DATE(t.lpep_pickup_datetime) = '2019-10-18'
+GROUP BY 
+    z.Zone
+HAVING 
+    SUM(t.total_amount) > 13000
+ORDER BY 
+    total_amount DESC
+LIMIT 3;
+```
 - ANSWER -> East Harlem North, East Harlem South, Morningside Heights
 
 
@@ -168,6 +188,31 @@ We need the name of the zone, not the ID.
 - East Harlem North
 - East Harlem South
 
+```sql
+SELECT 
+    z.Zone AS dropoff_zone_name,
+    t.tip_amount,
+    t.lpep_pickup_datetime,
+    t.lpep_dropoff_datetime,
+    t.trip_distance,
+    t.total_amount
+FROM 
+    trips t
+JOIN 
+    taxi_zone_lookup z_pickup
+ON 
+    t.PULocationID = z_pickup.LocationID
+JOIN 
+    taxi_zone_lookup z_dropoff
+ON 
+    t.DOLocationID = z_dropoff.LocationID
+WHERE 
+    DATE(t.lpep_pickup_datetime) BETWEEN '2019-10-01' AND '2019-10-31'
+    AND z_pickup.Zone = 'East Harlem North'
+ORDER BY 
+    t.tip_amount DESC
+LIMIT 1;
+```
 - ANSWER -> East Harlem North
 
 ## Terraform
