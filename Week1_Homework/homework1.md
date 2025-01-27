@@ -100,12 +100,12 @@ Answers:
 - 104,793;  202,661;  109,603;  27,678;  35,189
 - 104,838;  199,013;  109,645;  27,688;  35,202
 
-- ANSWER
-Up to 1 mile      91810
-1-3 miles        198995
-3-7 miles        109642
-7-10 miles        27686
-Over 10 miles     35201
+- ANSWER BELOW ->
+- Up to 1 mile      91810
+- 1-3 miles        198995
+- 3-7 miles        109642
+- 7-10 miles        27686
+- Over 10 miles     35201
 
 ## Question 4. Longest trip for each day
 
@@ -128,8 +128,7 @@ Which were the top pickup locations with over 13,000 in
 
 Consider only `lpep_pickup_datetime` when filtering by date.
  
-- ANSWER
-- East Harlem North, East Harlem South, Morningside Heights
+- ANSWER -> East Harlem North, East Harlem South, Morningside Heights
 
 
 ## Question 6. Largest tip
