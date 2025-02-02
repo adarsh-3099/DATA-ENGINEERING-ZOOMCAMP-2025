@@ -1,4 +1,4 @@
-## Module 2 Homework
+<img width="1393" alt="Screenshot 2025-02-02 at 2 26 51 AM" src="https://github.com/user-attachments/assets/b973298e-ef7e-4518-b8e3-5cab460c1e6c" />## Module 2 Homework
 
 ATTENTION: At the end of the submission form, you will be required to include a link to your GitHub repository or other public code-hosting site. This repository should contain your code for solving the homework. If your solution includes code that is not in file format, please include these directly in the README file of your repository.
 
@@ -34,6 +34,8 @@ Complete the Quiz shown below. It’s a set of 6 multiple-choice questions to te
 
 Ans -> 128.3 MB
 
+<img width="1393" alt="Screenshot 2025-02-02 at 2 22 57 AM" src="https://github.com/user-attachments/assets/4a1f86cb-04a6-40da-a0ed-3da7ed7b493a" />
+
 
 2) What is the rendered value of the variable `file` when the inputs `taxi` is set to `green`, `year` is set to `2020`, and `month` is set to `04` during execution?
 - `{{inputs.taxi}}_tripdata_{{inputs.year}}-{{inputs.month}}.csv` 
@@ -42,6 +44,8 @@ Ans -> 128.3 MB
 - `green_tripdata_2020.csv`
 
 Ans -> green_tripdata_2020-04.csv
+
+<img width="1393" alt="Screenshot 2025-02-02 at 2 26 51 AM" src="https://github.com/user-attachments/assets/1b405dde-633d-46c6-a14b-82f105ffc551" />
 
 
 3) How many rows are there for the `Yellow` Taxi data for all CSV files in the year 2020?
@@ -91,6 +95,8 @@ Ans -> 1,734,051
 - 2,561,031
 
 Ans -> 1,925,152
+
+<img width="1014" alt="Screenshot 2025-02-02 at 5 25 27 AM" src="https://github.com/user-attachments/assets/49367569-4d57-40fc-861b-ad6bbccdb30b" />
 
 
 6) How would you configure the timezone to New York in a Schedule trigger?
